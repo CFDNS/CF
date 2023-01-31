@@ -1,4 +1,4 @@
-### 新增支持Actions自选更新V4或V6 ——update 2022.12.19
+### 新增支持Actions自选更新V4或V6 ——update 2022.12.19.
 > 使用方法
 
    1. 修改 **`.github/workflows/run.yml`**
