@@ -135,7 +135,7 @@ def main(cloud):
                         ret = cloud.get_record(domain, 20, sub_domain, "CNAME")
                         if ret["code"] == 0:
                             for record in ret["data"]["records"]:
-                                if record["line"] == "默认" or record["line"] == "默认" or record["line"] == "默认":
+                                if record["line"] == "移动" or record["line"] == "联通" or record["line"] == "电信":
                                     retMsg = cloud.del_record(domain, record["id"])
                                     if(retMsg["code"] == 0):
                                         print("DELETE DNS SUCCESS: ----Time: "  + str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())) + "----DOMAIN: " + domain + "----SUBDOMAIN: " + sub_domain + "----RECORDLINE: "+record["line"] )
@@ -151,17 +151,17 @@ def main(cloud):
                         ab_info = []
                         def_info = []
                         for record in ret["data"]["records"]:
-                            if record["line"] == "移动":
+                            if record["line"] == "默认":
                                 info = {}
                                 info["recordId"] = record["id"]
                                 info["value"] = record["value"]
                                 cm_info.append(info)
-                            if record["line"] == "联通":
+                            if record["line"] == "默认":
                                 info = {}
                                 info["recordId"] = record["id"]
                                 info["value"] = record["value"]
                                 cu_info.append(info)
-                            if record["line"] == "电信":
+                            if record["line"] == "默认":
                                 info = {}
                                 info["recordId"] = record["id"]
                                 info["value"] = record["value"]
